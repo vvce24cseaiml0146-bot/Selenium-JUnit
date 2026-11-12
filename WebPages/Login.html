@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+
+    <h1>Welcome to DevOps</h1>
+
+    <h2>Login Page</h2>
+
+    <form onsubmit="login(event)">
+
+        <label>Username:</label>
+        <input type="text" id="username">
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <h3 id="message"></h3>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "student" && password === "12345") {
+                document.getElementById("message").innerText =
+                    "Login Successful";
+            } else {
+                document.getElementById("message").innerText =
+                    "Invalid Username or Password";
+            }
+        }
+    </script>
+
+</body>
+</html>
