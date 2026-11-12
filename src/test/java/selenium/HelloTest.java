@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Hello {
+public class HelloTest {
 
     WebDriver driver;
 
@@ -55,16 +55,11 @@ public class Hello {
     @Test
     public void validLoginTest() {
 
-        driver.findElement(By.id("username"))
-                .sendKeys("student");
-
-        driver.findElement(By.id("password"))
-                .sendKeys("12345");
-
+        driver.findElement(By.id("username")).sendKeys("student");
+        driver.findElement(By.id("password")).sendKeys("12345");
         driver.findElement(By.tagName("button")).click();
 
-        String message = driver.findElement(By.id("message"))
-                .getText();
+        String message = driver.findElement(By.id("message")).getText();
 
         assertEquals("Login Successful", message);
 
@@ -74,21 +69,13 @@ public class Hello {
     @Test
     public void invalidLoginTest() {
 
-        driver.findElement(By.id("username"))
-                .sendKeys("wrong");
-
-        driver.findElement(By.id("password"))
-                .sendKeys("wrong123");
-
+        driver.findElement(By.id("username")).sendKeys("wrong");
+        driver.findElement(By.id("password")).sendKeys("wrong123");
         driver.findElement(By.tagName("button")).click();
 
-        String message = driver.findElement(By.id("message"))
-                .getText();
+        String message = driver.findElement(By.id("message")).getText();
 
-        assertEquals(
-            "Invalid Username or Password",
-            message
-        );
+        assertEquals("Invalid Username or Password", message);
 
         System.out.println("Invalid Login Test Passed");
     }
